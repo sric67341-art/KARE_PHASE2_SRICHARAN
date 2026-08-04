@@ -1,0 +1,201 @@
+//---------- STRONG NUMBER------------//
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int original = n;
+        int sum = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+            int fact = 1;
+
+            for (int i = 1; i <= digit; i++) {
+                fact = fact * i;
+            }
+
+            sum = sum + fact;
+            n = n / 10;
+        }
+
+        if (sum == original) {
+            System.out.println("Strong Number");
+        } else {
+            System.out.println("Not Strong Number");
+        }
+    }
+}
+----------------------------------------------------------------------------------------------------------------------
+//------- perfect number-------------//
+  import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int sum = 0;
+
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) {
+                sum = sum + i;
+            }
+        }
+
+        if (sum == n) {
+            System.out.println("Perfect Number");
+        } else {
+            System.out.println("Not a Perfect Number");
+        }
+    }
+}
+-------------------------------------------------------------------------------------------
+  //------- Adam NUMBER---------------------------//
+  import java.util.Scanner;
+
+public class Main {
+
+    public static int reverse(int n) {
+        int rev = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            rev = rev * 10 + digit;
+            n = n / 10;
+        }
+        return rev;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        int rev = reverse(n);
+
+        int square1 = n * n;
+        int square2 = rev * rev;
+
+        int revSquare1 = reverse(square1);
+
+        if (square2 == revSquare1) {
+            System.out.println("Adam Number");
+        } else {
+            System.out.println("Not an Adam Number");
+        }
+    }
+}
+-------------------------------------------------------------------------
+  //------- arm strong number----------//
+  import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int original = n;
+        int sum = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+            sum = sum + (digit * digit * digit);
+            n = n / 10;
+        }
+
+        if (sum == original) {
+            System.out.println("Armstrong Number");
+        } else {
+            System.out.println("Not an Armstrong Number");
+        }
+    }
+}
+-----------------------------------------------------------------
+  //--------- prime number only two factors---------//
+  import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int count = 0;
+
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+
+        if (count == 2) {
+            System.out.println("Prime Number");
+        } else {
+            System.out.println("Not a Prime Number");
+        }
+    }
+}
+---------------------------------------------------
+  //-----amicable pair--------------//
+  import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        int sum1 = 0;
+        int sum2 = 0;
+
+        // Sum of proper divisors of a
+        for (int i = 1; i < a; i++) {
+            if (a % i == 0) {
+                sum1 += i;
+            }
+        }
+
+        // Sum of proper divisors of b
+        for (int i = 1; i < b; i++) {
+            if (b % i == 0) {
+                sum2 += i;
+            }
+        }
+
+        if (sum1 == b && sum2 == a) {
+            System.out.println("Amicable Pair");
+        } else {
+            System.out.println("Not an Amicable Pair");
+        }
+    }
+}
+-----------------------------------------------------------------
+  //--------- neion number-----------------------------//
+  import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int square = n * n;
+        int sum = 0;
+
+        while (square > 0) {
+            int digit = square % 10;
+            sum = sum + digit;
+            square = square / 10;
+        }
+
+        if (sum == n) {
+            System.out.println("Neon Number");
+        } else {
+            System.out.println("Not a Neon Number");
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  
