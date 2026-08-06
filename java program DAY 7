@@ -1,0 +1,46 @@
+//--------missing number------------//
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt(); // Total numbers
+
+        int[] arr = new int[n - 1];
+        int sum = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+            arr[i] = sc.nextInt();
+            sum += arr[i];
+        }
+
+        int total = n * (n + 1) / 2;
+
+        int missing = total - sum;
+
+        System.out.println("Missing Number = " + missing);
+    }
+}
+------------------------------------------------------------------------------------------
+  //--------------left 0 and right 1----------------------------//
+  import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (j <= n - i)
+                    System.out.print("0");
+                else
+                    System.out.print("1");
+            }
+            System.out.println();
+        }
+    }
+}
+-------------------------------------------------------------------
