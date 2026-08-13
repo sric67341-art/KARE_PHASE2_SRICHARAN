@@ -1,0 +1,129 @@
+//---to check the number power or not by using function ith argument no return type---------//
+class Main {
+
+    static void checkPower(int n) {
+        int temp = n;
+
+        while (temp > 1 && temp % 2 == 0) {
+            temp = temp / 2;
+        }
+
+        if (temp == 1)
+            System.out.println(n + " is a power of 2");
+        else
+            System.out.println(n + " is not a power of 2");
+    }
+
+    public static void main(String[] args) {
+        checkPower(16);
+    }
+}
+-------------------------------------------------------------------
+  //---------- nth term of fibanocies series-------------------//
+  class Fibonacci {
+
+    static int fib(int n) {
+        if (n == 0)
+            return 0;
+
+        if (n == 1)
+            return 1;
+
+        return fib(n - 1) + fib(n - 2);
+    }
+
+    public static void main(String[] args) {
+        int n = 7;
+
+        System.out.println("Nth term = " + fib(n));
+    }
+}
+---------------------------------------------------------------------
+  //------------ linear recursion------------//
+  class Main {
+
+    static int sum(int n) {
+        if (n == 0) {
+            return 0;
+        }
+
+        return n + sum(n - 1);
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+
+        System.out.println("Sum = " + sum(n));
+    }
+}
+-----------------------------------------------------------
+  //------- linear recursion using factorial--------//
+  class Main// {
+
+    static int fact(int n) {
+        if (n == 0)
+            return 1;
+
+        return n * fact(n - 1);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(fact(5));
+    }
+}
+--------------------------------------------------------------------------
+//---------- copy constructor--------//
+  class Student {
+    int id;
+    String name;
+
+    // Parameterized constructor
+    Student(int i, String n) {
+        id = i;
+        name = n;
+    }
+
+    // Copy constructor
+    Student(Student s) {
+        id = s.id;
+        name = s.name;
+    }
+
+    void display() {
+        System.out.println(id + " " + name);
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student(101, "Charan");
+        Student s2 = new Student(s1);
+
+        s1.display();
+        s2.display();
+    }
+}
+--------- nester constructor----------//
+  class Outer {
+
+    class Inner {
+        int x;
+
+        Inner(int x) {
+            this.x = x;
+        }
+
+        void display() {
+            System.out.println("x = " + x);
+        }
+    }
+
+    public static void main(String[] args) {
+        Outer obj = new Outer();
+
+        Outer.Inner in = obj.new Inner(10);
+
+        in.display();
+    }
+}
+---------------------------------------------------------------------
+  
+  
