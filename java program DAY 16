@@ -1,0 +1,333 @@
+---------- DoublyLinkedList-------------
+class DoublyLinkedList {
+
+    // Node class
+    class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+
+    Node head = null;
+
+    // Insert at end
+    void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    // Find sum
+    int sum() {
+        int total = 0;
+        Node temp = head;
+
+        while (temp != null) {
+            total = total + temp.data;
+            temp = temp.next;
+        }
+
+        return total;
+    }
+
+    public static void main(String[] args) {
+
+        DoublyLinkedList list = new DoublyLinkedList();
+
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        list.insert(40);
+
+        System.out.println("Sum = " + list.sum());
+    }
+}
+-----------------------------------------------------------------------
+  ----------- maximum element--------
+  class DoublyLinkedList {
+
+    class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    Node head = null;
+
+    // Insert element
+    void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    // Find maximum element
+    int maximum() {
+        Node temp = head;
+        int max = temp.data;
+
+        while (temp != null) {
+            if (temp.data > max) {
+                max = temp.data;
+            }
+            temp = temp.next;
+        }
+
+        return max;
+    }
+
+    public static void main(String[] args) {
+
+        DoublyLinkedList list = new DoublyLinkedList();
+
+        list.insert(10);
+        list.insert(50);
+        list.insert(20);
+        list.insert(80);
+        list.insert(30);
+
+        System.out.println("Maximum element = " + list.maximum());
+    }
+}
+-------------------------------------------------------------------------------
+  -------------- reverse order---------------------------
+  class DoublyLinkedList {
+
+    class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    Node head = null;
+
+    // Insert element
+    void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    // Print in reverse order
+    void reversePrint() {
+        Node temp = head;
+
+        // Go to last node
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        // Print from last to first
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.prev;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        DoublyLinkedList list = new DoublyLinkedList();
+
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        list.insert(40);
+        list.insert(50);
+
+        System.out.println("Elements in reverse order:");
+        list.reversePrint();
+    }
+}
+---------------------------------------------------------------------------
+  ---------- insert elements in double linked list------------------
+  class DoublyLinkedList {
+
+    class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    Node head = null;
+
+    // Insert at end
+    void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    // Display elements
+    void display() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        DoublyLinkedList list = new DoublyLinkedList();
+
+        list.insert(10);
+        list.insert(20);
+        list.insert(30);
+        list.insert(40);
+        list.insert(50);
+
+        System.out.println("Doubly Linked List:");
+        list.display();
+    }
+}
+-----------------------------------------------------------------------------
+  ------ sort the double linked list---------
+  class DoublyLinkedList {
+
+    class Node {
+        int data;
+        Node next;
+        Node prev;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    Node head = null;
+
+    // Insert element
+    void insert(int data) {
+        Node newNode = new Node(data);
+
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        temp.next = newNode;
+        newNode.prev = temp;
+    }
+
+    // Sort the doubly linked list
+    void sort() {
+        Node i, j;
+        int temp;
+
+        for (i = head; i != null; i = i.next) {
+            for (j = i.next; j != null; j = j.next) {
+
+                if (i.data > j.data) {
+                    temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+            }
+        }
+    }
+
+    // Display elements
+    void display() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        DoublyLinkedList list = new DoublyLinkedList();
+
+        list.insert(40);
+        list.insert(10);
+        list.insert(50);
+        list.insert(20);
+        list.insert(30);
+
+        System.out.println("Before sorting:");
+        list.display();
+
+        list.sort();
+
+        System.out.println("\nAfter sorting:");
+        list.display();
+    }
+}
+-------------------------------------------------------------------------
+  
+  
