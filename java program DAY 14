@@ -1,0 +1,211 @@
+//Hybrid Inheritance
+class GrandFather{
+    void gen1(){
+        System.out.println("Diamond");
+    }
+}
+class Father extends GrandFather{
+    void gen21(){
+        System.out.println("Gold");
+    }
+}
+class Son extends Father{
+    void gen3(){
+        System.out.println("Silver");
+    }
+}
+class Mother extends Father{
+    void gen22(){
+        System.out.println("money");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Son obj1=new Son();
+        obj1.gen1();
+        obj1.gen21();
+        obj1.gen3();
+        Mother obj=new Mother();
+        obj.gen21();
+        obj.gen22();
+    }
+}
+//write a java programe to check the specific num is perfect square or not 
+// by using fuction with no argument no return type
+
+import java.util.Scanner;
+
+public class Main {
+    void perfectsquare(){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),flag=0;
+        for(int i=0;i<n/2;i++){
+            if(i*i==n){
+                flag=1;
+                System.out.println("Pefetct Square of  "+i);
+                break;
+            }
+        }
+        if(flag==0)
+            System.out.println("not a Perfect Square");
+    }
+    public static void main(String[] args) {
+        Main obj=new Main();
+        obj.perfectsquare();
+    }
+}
+//write a java programe to check the specific num is power of 2 or not 
+// by using fuction with  argument no return type
+
+import java.util.Scanner;
+
+public class Main {
+    void poweroftwo(int n){
+        while(n%2==0){
+            n=n/2;
+        }
+        if(n==1)
+            System.out.println("a power of 2");
+        else
+            System.out.println("Not a power of 2");
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        Main obj=new Main();
+        obj.poweroftwo(n);
+    }
+}
+//write a java programe to check the specific num Automorphic number or not 
+// by using fuction with  argument no return type
+//1)get the num form user num=5
+//2)find the square of the number 25
+//3)to count number of dogits in num 1
+//4)to find the power of the value power=pow(10,count)
+//5)if sqr%power==n then print Automorphic number else not a automorphic number
+import java.util.*;
+
+public class Main {
+    Boolean Automorphic(){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int count=0,sqr=n*n,temp=n;
+        while(n>0){
+            n/=10;
+            count++;
+        }
+        int power=(int)Math.pow(10,count);
+        int ans=sqr%power;
+        return ans==temp;
+    }
+    public static void main(String[] args) {
+        Main obj=new Main();
+        System.out.println(obj.Automorphic());
+    }
+}
+//write a java programe to check the specific num Automorphic number or not 
+// by using fuction with no argument no return type
+//1)get the num form user num=5
+//2)find the square of the number 25
+//3)to count number of dogits in num 1
+//4)to find the power of the value power=pow(10,count)
+//5)if sqr%power==n then print Automorphic number else not a automorphic number
+import java.util.*;
+public class Main {
+    Boolean Automorphic(){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int count=0,sqr=n*n,temp=n;
+        while(n>0){
+            n/=10;
+            count++;
+        }
+        int power=(int)Math.pow(10,count);
+        int ans=sqr%power;
+        return ans==temp;
+    }
+    public static void main(String[] args) {
+        Main obj=new Main();
+        Boolean answ=obj.Automorphic();
+        if(answ){
+            System.out.println("Automorphic number");
+        }else
+            System.out.println("Not a Automorphic number");
+    }
+}
+//write a java programe to check the specific num perfect cube or not 
+// by using fuction with  argument  return type
+
+import java.util.*;
+public class Main {
+    Boolean perfectcube(int n){
+        
+        int flag=0;
+        for(int i=0;i<=n/2;i++){
+            if(i*i*i==n){
+                flag=1;
+            }
+        }
+        return flag==1;
+        
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        Main obj=new Main();
+        Boolean answ=obj.perfectcube(n);
+        if(answ){
+            System.out.println("perfect cube");
+        }else
+            System.out.println("Not a perfect cube");
+    }
+}
+//tail recursion
+import java.util.*;
+public class Main {
+        static void fun(int n){
+            if(n!=0){
+                System.out.println(n);
+                fun(n-1);
+            }
+        }
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        fun(n);        
+    }
+}
+//head recursion
+import java.util.*;
+public class Main {
+        static void fun(int n){
+            if(n!=0){
+                fun(n-1);
+                System.out.println(n);
+            }
+        }
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        fun(n);        
+    }
+}
+//linear recursion   Factrial
+import java.util.*;
+public class Main {
+        static int fun(int n){
+            if(n==0 || n==1){
+               return 1;
+            }
+            return n*fun(n-1);
+        }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int ans=fun(n);  
+        System.out.println(ans);
+
+    }
+}
